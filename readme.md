@@ -16,4 +16,45 @@ Similarity-detection-using-RoBERTa/
 
 ```
 
-## Usage
+## How to Run
+1. Clone repo
+```
+git clone https://github.com/amaanrzv39/Similarity-detection-using-RoBERTa.git
+cd Similarity-detection-using-RoBERTa
+```
+2. Create virtual environment
+```
+python -m venv venv
+source venv/bin/activate   # For Linux/macOS
+venv\Scripts\activate      # For Windows
+```
+3. Install Dependencies
+```
+pip install -r requirements.txt
+```
+4. Start app
+```
+uvicorn app:app --reload
+```
+5. Test app
+```
+curl -X 'POST' \
+  'http://127.0.0.1:8000/classify/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file1=@1-original.txt;type=text/plain' \
+  -F 'file2=@1-paraphrase.txt;type=text/plain'
+```
+6. Response Format
+```
+{
+  "file1": "1-original.txt",
+  "file2": "1-paraphrase.txt",
+  "result": "Paraphrase",
+  "score": 0.971381425857544
+}
+```
+
+# 📜 License
+
+This project is open-source and available under the MIT License.
