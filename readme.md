@@ -8,7 +8,7 @@ The application is built using FastAPI, making it easy to deploy and test via AP
 ## Project Structure
 ```
 Similarity-detection-using-RoBERTa/
-│── data
+│── data                    # Webis CPC dataset
 │── notebook                # contains implementation notebook
 │── app.py                  # FastAPI application
 │── predict.py              # Model inference logic
